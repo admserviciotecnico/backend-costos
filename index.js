@@ -20,8 +20,13 @@ app.get("/api/productos", async (_req, res) => {
 ===================== */
 app.get("/api/costos", async (_req, res) => {
   const rows = await supabaseSelect("costos", "select=*");
+
+  console.log("ROW CRUDO:", rows[0]);
+  console.log("ROW MAPEADO:", mapCosto(rows[0]));
+
   res.json(rows.map(mapCosto));
 });
+
 
 /* =====================
    COSTEO (POST)

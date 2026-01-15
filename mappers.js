@@ -11,11 +11,11 @@ export function mapProducto(db) {
 export function mapCosto(row) {
   return {
     id: row.id,
-    item: row.item,
-    tipo: row.tipo,
-    subtipo: row.subtipo,
-    codigo: row.codigo,
-    denominacion: row.denominacion,
+    item: null,                         // no existe en Supabase
+    tipo: row.categoria,                // ← mapeo correcto
+    subtipo: row.subcategoria,           // ← mapeo correcto
+    codigo: null,                       // no existe
+    denominacion: row.descripcion,       // ← mapeo correcto
     unidad: row.unidad,
     costo_fob: row.costo_fob,
     costo_fabrica: row.costo_fabrica,
