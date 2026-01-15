@@ -8,12 +8,17 @@ export function mapProducto(db) {
   };
 }
 
-export function mapCosto(db) {
+export function mapCosto(row) {
   return {
-    id: db.legacy_id,
-    producto_id: db.producto_legacy_id,
-    concepto: db.concepto,
-    valor: db.valor,
-    unidad: db.unidad
+    id: row.id,
+    item: row.item,
+    tipo: row.tipo,
+    subtipo: row.subtipo,
+    codigo: row.codigo,
+    denominacion: row.denominacion,
+    unidad: row.unidad,
+    costo_fob: row.costo_fob,
+    costo_fabrica: row.costo_fabrica,
+    coeficiente: row.coeficiente
   };
 }
